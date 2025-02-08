@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: pink;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.doggo {
+    width: 420px;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+h1 {
+    /* border: 1px solid black; */
+    color: red;
+}
+.buttons {
+    margin-top: 5px;
+}
+button {
+    margin: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.yes-btn {
+    background-color: red;
+    color: white;
+}
+.no-btn {
+    background-color: gray;
+    color: white;
+}
