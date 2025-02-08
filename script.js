@@ -39,3 +39,60 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fireworksContainer = document.querySelector(".fireworks-container");
+
+    // Function to create a heart explosion
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+
+        heart.style.left = `${x}px`;
+        heart.style.top = `${y}px`;
+        heart.style.fontSize = `${Math.random() * 30 + 10}px`;
+
+        fireworksContainer.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 1500);
+    }
+
+    // Function to create a firework explosion
+    function createFirework() {
+        const fireworkX = Math.random() * window.innerWidth;
+        const fireworkY = Math.random() * (window.innerHeight / 2);
+
+        for (let i = 0; i < 20; i++) {
+            const spark = document.createElement("div");
+            spark.classList.add("spark");
+
+            // Random movement directions
+            const angle = (Math.PI * 2 * i) / 20;
+            const distance = Math.random() * 100 + 50;
+
+            spark.style.setProperty("--x", `${Math.cos(angle) * distance}px`);
+            spark.style.setProperty("--y", `${Math.sin(angle) * distance}px`);
+            spark.style.left = `${fireworkX}px`;
+            spark.style.top = `${fireworkY}px`;
+            spark.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`; // Random colors
+
+            fireworksContainer.appendChild(spark);
+
+            setTimeout(() => {
+                spark.remove();
+            }, 1000);
+        }
+    }
+
+    // Generate hearts and fireworks continuously
+    setInterval(createHeart, 300);
+    setInterval(createFirework, 1000);
+});
