@@ -1,49 +1,74 @@
 body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: pink;
+    margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0;
+    background: url('asdasd.png') no-repeat center center/cover;
 }
+
 .container {
-    background: white;
+    background: url('bg2.png') no-repeat center center/cover;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 400px;
+    width: 90%;
+    min-height: 300px;
+    backdrop-filter: blur(5px);
 }
+
+h1 {
+    color: rgb(177, 11, 11);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 .doggo {
-    width: auto;
+    max-width: 100%;  /* Ensures the image never exceeds the container */
+    height: auto;      /* Maintains aspect ratio */
     margin-top: 15px;
     border-radius: 10px;
 }
-h1 {
-    /* border: 1px solid black; */
-    color: red;
-}
+
+
 .buttons {
-    margin-top: 5px;
+    margin-top: 10px;
 }
+
 button {
     margin: 5px;
-    padding: 8px 15px;
+    padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .yes-btn {
     background-color: red;
     color: white;
 }
+
+.yes-btn:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5);
+}
+
 .no-btn {
     background-color: gray;
     color: white;
+}
+
+.no-btn:hover {
+    background-color: darkgray;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.5);
 }
