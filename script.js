@@ -70,13 +70,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const fireworkX = Math.random() * window.innerWidth;
         const fireworkY = Math.random() * (window.innerHeight / 2);
 
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 25; i++) {
             const spark = document.createElement("div");
             spark.classList.add("spark");
 
             // Random movement directions
-            const angle = (Math.PI * 2 * i) / 20;
-            const distance = Math.random() * 100 + 50;
+            const angle = (Math.PI * 2 * i) / 25;
+            const distance = Math.random() * 150 + 50;
 
             spark.style.setProperty("--x", `${Math.cos(angle) * distance}px`);
             spark.style.setProperty("--y", `${Math.sin(angle) * distance}px`);
@@ -87,12 +87,17 @@ document.addEventListener("DOMContentLoaded", function () {
             fireworksContainer.appendChild(spark);
 
             setTimeout(() => {
+                spark.style.transform = "scale(2)"; // Doubles in size
+                spark.style.opacity = "0"; // Starts fading
+            }, 1000); // Happens 2 seconds before full removal
+
+            setTimeout(() => {
                 spark.remove();
-            }, 1000);
+            }, 2000);
         }
     }
 
     // Generate hearts and fireworks continuously
-    setInterval(createHeart, 300);
-    setInterval(createFirework, 1000);
+    setInterval(createHeart, 150);
+    setInterval(createFirework, 150);
 });

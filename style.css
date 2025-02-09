@@ -18,8 +18,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 400px;
-    width: 90%;
+    max-width: 300px;
+    width: 100%;
     min-height: 300px;
     backdrop-filter: blur(5px);
 }
