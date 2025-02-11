@@ -1,0 +1,55 @@
+.book {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 1s ease-in-out;
+}
+
+.book.open {
+    transform: scale(1.5);
+}
+
+.page {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(246, 211, 211); /* Default background color */
+    background-image: url('4.png'); /* Default image for all pages */
+    background-size: cover; /* Ensure the image covers the entire page */
+    background-position: center; /* Center the image */
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.08) 5px 2px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 2s ease-in-out;
+    transform-origin: left;
+}
+
+.page:nth-child(1) {
+    background-image: url('3.png'); /* Background for the first page */
+    background-size: contain;
+}
+
+.page:nth-child(1) { z-index: 7; }
+.page:nth-child(2) { z-index: 6; }
+.page:nth-child(3) { z-index: 5; }
+.page:nth-child(4) { z-index: 4; }
+.page:nth-child(5) { z-index: 3; }
+.page:nth-child(6) { z-index: 2; }
+.page:nth-child(7) { z-index: 1; }
+
+.page.flipped {
+    transform: rotateY(-180deg);
+}
+
+.page-image {
+    width: 100%; /* Set the image width to 30% of the page */
+    height: 50%; /* Maintain the image's aspect ratio */
+    object-fit: cover;
+}
