@@ -10,7 +10,6 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #fce4ec;
-    margin: 0;
 }
 
 /* Book */
@@ -52,13 +51,28 @@ body {
     z-index: 0;
 }
 
-.front-content,
-.back-content {
+.page-content {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.page-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.page-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
 }
 
 /* Background images */
@@ -74,34 +88,34 @@ body {
     background-position: center;
 }
 
-#p2 .front,
-#p3 .front,
-#p4 .front,
-#p5 .front,
-#p6 .front,
-#p7 .front {
+#p2 .front, #p3 .front, #p4 .front, #p5 .front, #p6 .front, #p7 .front {
     background-image: url('4.png');
     background-size: cover;
     background-position: center;
 }
 
-#p1 .back,
-#p2 .back,
-#p3 .back,
-#p4 .back,
-#p5 .back,
-#p6 .back {
+#p1 .back, #p2 .back, #p3 .back, #p4 .back, #p5 .back, #p6 .back {
     background-image: url('4.png');
     background-size: cover;
     background-position: center;
 }
-.back-content {
-    transform: rotateY(180deg)
+
+#b1, #b2, #b3, #b4, #b5, #b6, #b7 {
+    transform: rotateY(-180deg);
 }
+
+.back-content {
+    display: flex;
+    flex-direction: row-reverse; /* Flip content alignment */
+    justify-content: center;
+    align-items: center;
+    text-align: right; /* Keep text alignment correct */
+    padding: 20px;
+}
+
 
 /* Paper flip effect */
-.flipped .front,
-.flipped .back {
+.flipped .front, .flipped .back {
     transform: rotateY(-180deg);
 }
 
@@ -131,33 +145,13 @@ i {
 }
 
 /* Paper stack order */
-#p1 {
-    z-index: 7;
-}
-
-#p2 {
-    z-index: 6;
-}
-
-#p3 {
-    z-index: 5;
-}
-
-#p4{
-    z-index: 4;
-}
-
-#p5{
-    z-index: 3;
-}
-
-#p6{
-    z-index: 2;
-}
-
-#p7{
-    z-index: 1;
-}
+#p1 { z-index: 7; }
+#p2 { z-index: 6; }
+#p3 { z-index: 5; }
+#p4 { z-index: 4; }
+#p5 { z-index: 3; }
+#p6 { z-index: 2; }
+#p7 { z-index: 1; }
 
 
 
