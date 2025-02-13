@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@1,500&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +21,7 @@ body {
     width: 350px;
     height: 500px;
     transition: transform 1s;
+    border-radius: 10px;
 }
 
 .paper {
@@ -39,7 +43,12 @@ body {
     left: 0;
     transform-origin: left;
     transition: transform 1s ease;
+    border-radius: 0px 8px 8px 0px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.03), /* Lighter top shadow */
+                3px 3px 6px rgba(0, 0, 0, 0.03),  /* Lighter right shadow */
+                2px 4px 6px rgba(0, 0, 0, 0.03); /* Lighter bottom shadow */
 }
+
 
 .front {
     z-index: 1;
@@ -59,7 +68,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 .page-image {
@@ -67,18 +76,27 @@ body {
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4); /* Simple soft shadow */
 }
 
 .page-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500; /* Medium */
+    font-style: italic;
     font-size: 1rem;
     line-height: 1.5;
     color: #333;
 }
 
+.front-text, .back-text{
+    font-family: 'Parisienne', cursive;
+    font-size: 150%;
+}
+
 /* Background images */
 #p1 .front {
-    background-image: url('5.png');
-    background-size: cover;
+    background-image: url('frontstyle.png');
+    background-size: auto;
     background-position: center;
 }
 
@@ -106,13 +124,22 @@ body {
 
 .back-content {
     display: flex;
-    flex-direction: row-reverse; /* Flip content alignment */
+    /* flex-direction: row-reverse; Flip content alignment */
     justify-content: center;
     align-items: center;
-    text-align: right; /* Keep text alignment correct */
+    text-align: center; /* Keep text alignment correct */
+    height: 100%;
     padding: 20px;
 }
 
+.front-content {
+    display: flex;
+    /* flex-direction: row-reverse; Flip content alignment */
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Keep text alignment correct */
+    padding: 30px 20px 20px 20px;
+}
 
 /* Paper flip effect */
 .flipped .front, .flipped .back {
@@ -152,6 +179,8 @@ i {
 #p5 { z-index: 3; }
 #p6 { z-index: 2; }
 #p7 { z-index: 1; }
+
+
 
 
 

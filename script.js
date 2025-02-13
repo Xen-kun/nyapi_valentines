@@ -169,22 +169,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to create a heart explosion
     function createHeart() {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.innerHTML = "❤️";
+        for (let i = 0; i < 5; i++) { // Increase the number of hearts per call
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
 
-        const x = Math.random() * window.innerWidth;
-        const y = Math.random() * window.innerHeight;
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
 
-        heart.style.left = `${x}px`;
-        heart.style.top = `${y}px`;
-        heart.style.fontSize = `${Math.random() * 30 + 10}px`;
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+            heart.style.fontSize = `${Math.random() * 30 + 10}px`;
 
-        fireworksContainer.appendChild(heart);
+            fireworksContainer.appendChild(heart);
 
-        setTimeout(() => {
-            heart.remove();
-        }, 1500);
+            setTimeout(() => {
+                heart.remove();
+            }, 2000); // Hearts last longer
+        }
     }
 
     // Function to create a firework explosion
@@ -220,6 +222,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Generate hearts and fireworks continuously
-    setInterval(createHeart, 150);
-    setInterval(createFirework, 150);
+    setInterval(createHeart, 120);
+    setInterval(createFirework, 120);
 });
