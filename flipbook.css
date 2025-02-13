@@ -79,11 +79,20 @@ body {
     box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4); /* Simple soft shadow */
 }
 
+.page-video {
+    width:55%; /* Adjust the size of the video */
+    max-width: 300px; /* Ensures it doesn’t get too large */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4); /* Soft shadow effect */
+    margin-bottom: 15px; /* Space below the video */
+}
+
+
 .page-text {
     font-family: 'Inter', sans-serif;
     font-weight: 500; /* Medium */
-    font-style: italic;
-    font-size: 1rem;
+    font-style: none;
+    font-size: 0.8rem;
     line-height: 1.5;
     color: #333;
 }
