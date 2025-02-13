@@ -72,19 +72,11 @@ body {
 }
 
 .page-image {
-    max-width: 50%;
+    max-width: 70%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
     box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4); /* Simple soft shadow */
-}
-
-.page-video {
-    width:55%; /* Adjust the size of the video */
-    max-width: 300px; /* Ensures it doesn’t get too large */
-    border-radius: 10px; /* Rounded edges */
-    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4); /* Soft shadow effect */
-    margin-bottom: 15px; /* Space below the video */
 }
 
 
@@ -158,27 +150,49 @@ body {
 /* Controller Buttons */
 button {
     z-index: 10;
-    border: 1px solid black;
-    background-color: gray;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    background-color: #ff4d6d;
+    border: none;
     cursor: pointer;
-    height: 30px;
-    width: 30px;
-    margin: 10px;
-    transition: transform 0.5s ease;
-}
-
-button:focus {
+    transition: transform 0.3s ease;
     outline: none;
 }
 
-button:hover i {
-    color: #636363;
+/* Heart shape */
+button::before,
+button::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff4d6d;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
 }
 
-i {
-    font-size: 50px;
-    color: gray;
+button::before {
+    transform: translateX(-50%);
 }
+
+button::after {
+    transform: translateY(-50%);
+}
+
+/* Making the bottom part of the heart */
+button {
+    clip-path: polygon(50% 80%, 0% 30%, 25% 0%, 50% 20%, 75% 0%, 100% 30%);
+}
+
+/* Hover Effect */
+button:hover {
+    transform: scale(1.1);
+    background-color: #e63950;
+}
+
 
 /* Paper stack order */
 #p1 { z-index: 7; }

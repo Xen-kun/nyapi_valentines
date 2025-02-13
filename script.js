@@ -4,7 +4,7 @@ function showMemories() {
 }
 
 function sayNo() {
-    alert("Oops! You cannot say No, I'm clever right?");
+    alert("Oops! You cannot say No HAHA, I'm clever right?");
 }
 
 
